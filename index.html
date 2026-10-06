@@ -193,6 +193,18 @@
   }
   .conta b{color:#3d3b37;font-weight:600}
 
+  /* ---------- explicacao do resultado ---------- */
+  .porque{
+    margin-top:26px;padding:20px 22px;background:#f7f6f3;
+    border:1px solid var(--line);border-left:3px solid #1a1a1a;border-radius:4px;
+  }
+  .porque h3{font-family:Georgia,"Times New Roman",serif;font-size:17px;margin:0 0 10px;color:#1a1a1a}
+  .porque p{margin:0;font-size:15px;line-height:1.68;color:#3d3b37}
+  .porque p.outro{margin-top:12px;padding-top:12px;border-top:1px solid #e3e1dc;font-size:14px;color:var(--muted)}
+  .porque.l{border-left-color:var(--lula)}
+  .porque.f{border-left-color:var(--flavio)}
+  .porque em{font-style:normal;font-weight:600;color:#1a1a1a}
+
   /* ---------- rodape ---------- */
   .rodape{font-size:12px;color:#8b8880;line-height:1.6;margin-top:16px;text-align:center}
   .rodape a{color:#8b8880}
@@ -348,6 +360,12 @@
             <div class="bar"><i id="barFlavio"></i></div>
           </div>
         </div>
+      </div>
+
+      <div class="porque" id="porque">
+        <h3 id="porque-titulo">…</h3>
+        <p id="porque-texto">…</p>
+        <p class="outro" id="porque-outro">…</p>
       </div>
 
       <div class="conta" id="conta">…</div>
@@ -534,6 +552,115 @@ const PERGUNTAS_POLEMICAS = [
   }
 ];
 
+/* =========================================================
+   RESUMOS
+   Versao curta de cada proposta, para montar a explicacao
+   do resultado. Casadas pelo campo "tema" da pergunta.
+   Precisam completar a frase "Voce acreditou que ...".
+   ========================================================= */
+const RESUMOS = {
+  "Comida e impostos": {
+    L: "o governo deve zerar o imposto da cesta básica e devolver parte do imposto pago às famílias mais pobres",
+    F: "cortar os impostos de tudo o que a família compra no mercado deixa a comida mais barata para todo mundo"
+  },
+  "Escola e jovens": {
+    L: "vale a pena pagar uma poupança mensal para o jovem não abandonar o ensino médio",
+    F: "escola cívico-militar e voucher para a escola particular resolvem a educação melhor"
+  },
+  "Saúde": {
+    L: "o caminho é contratar mais médicos especialistas e garantir vacinação gratuita e obrigatória",
+    F: "aplicativo de celular e inteligência artificial resolvem as filas da saúde mais rápido"
+  },
+  "Segurança": {
+    L: "o crime se combate com inteligência e seguindo o dinheiro das facções",
+    F: "presídio de segurança máxima e pena mais dura são o que reduz o crime"
+  },
+  "Meio ambiente": {
+    L: "a Amazônia precisa de desmatamento zero e de combate firme ao garimpo ilegal",
+    F: "pagar quem preserva a mata funciona melhor do que fiscalizar o produtor"
+  },
+  "Programas sociais": {
+    L: "o Bolsa Família é um direito fixo que garante comida no prato",
+    F: "o auxílio deve ser só o começo para a pessoa arrumar emprego e não depender do Estado"
+  },
+  "Imposto de Renda": {
+    L: "quem ganha até R$ 5.000 não deveria pagar Imposto de Renda e os muito ricos deveriam pagar mais",
+    F: "cortar gastos públicos e impostos é o que faz a economia crescer e gerar emprego"
+  },
+  "Emprego": {
+    L: "o salário mínimo tem que subir acima da inflação e a escala 6x1 tem que acabar",
+    F: "o trabalhador deve negociar direto com o patrão, com menos regras"
+  },
+  "Casa própria": {
+    L: "o Minha Casa Minha Vida e a infraestrutura das periferias resolvem a moradia",
+    F: "financiamento com juros baixos e o documento da casa na mão é o que resolve"
+  },
+  "Internet": {
+    L: "o governo deve criar regras para combater as mentiras na internet",
+    F: "a internet deve ser totalmente livre, sem órgão de controle"
+  },
+  "Creches": {
+    L: "creche pública em tempo integral em todo município é o caminho",
+    F: "o voucher-creche resolve a fila enquanto a vaga pública não sai"
+  },
+  "Agricultura": {
+    L: "investir na agricultura familiar é o que barateia a comida",
+    F: "apoiar o agronegócio com máquina e irrigação é o que faz o país crescer"
+  },
+  "Faculdade": {
+    L: "mais universidade pública e instituto federal é o jeito de abrir a faculdade",
+    F: "crédito estudantil pago só depois do emprego é o jeito de abrir a faculdade"
+  },
+  "Tamanho do governo": {
+    L: "ministérios de cultura, mulheres, igualdade racial e meio ambiente são necessários",
+    F: "a máquina pública precisa enxugar, com o corte de pelo menos 10 ministérios"
+  },
+  "Aposentadoria": {
+    L: "a previdência pública deve garantir aposentadoria justa e diversificar o financiamento",
+    F: "automatizar o INSS pelo celular acaba com as filas sem sindicato no meio"
+  },
+  "Armas": {
+    L: "a venda de armas e munições precisa de controle rigoroso",
+    F: "o cidadão de bem tem o direito de comprar arma para proteger a família"
+  },
+  "Serviços públicos": {
+    L: "o dinheiro deve ir direto para o SUS e para a escola pública",
+    F: "parceria com hospital e escola privada atende o cidadão mais rápido"
+  },
+  "Obras e transportes": {
+    L: "o governo federal deve liderar as grandes obras de transporte e energia",
+    F: "estradas e portos rendem mais nas mãos da iniciativa privada"
+  },
+  "Direitos das mulheres": {
+    L: "igualdade salarial entre homens e mulheres na mesma função precisa ser lei",
+    F: "capacitação, empreendedorismo feminino e proteção contra a violência doméstica resolvem mais"
+  },
+  "Servidor público": {
+    L: "mais concursos e salários valorizados para as carreiras do Estado",
+    F: "reforma administrativa para cortar comissionados, penduricalhos e supersalários"
+  },
+  "STF e Judiciário": {
+    L: "o governo deve respeitar a autonomia do STF",
+    F: "as decisões individuais dos ministros do STF precisam de limite"
+  },
+  "Empresas do governo": {
+    L: "a Petrobras e os Correios devem continuar públicos e fortes",
+    F: "as estatais desnecessárias devem ser privatizadas"
+  },
+  "Terras indígenas e quilombolas": {
+    L: "a demarcação de terras indígenas e quilombolas deve ser acelerada",
+    F: "a segurança jurídica do proprietário rural vem antes de tudo"
+  },
+  "Redes sociais": {
+    L: "as redes sociais precisam de regras contra mentira, ódio e ataque à democracia",
+    F: "nenhum órgão público deve fiscalizar a internet"
+  },
+  "Cultura, escola e esporte": {
+    L: "o governo deve criar políticas específicas de proteção à população LGBTQIAP+",
+    F: "a escola não pode doutrinar e o esporte feminino deve ser só de atleta do sexo biológico feminino"
+  }
+};
+
 /* monta a lista final: as 5 polêmicas caem em posições sorteadas
    na faixa do meio, sem abrir nem fechar o quiz */
 function montarPerguntas(){
@@ -642,9 +769,70 @@ function responder(pos){
    Flávio = quantas vezes a linha "F" foi escolhida
    % = (pontos / 20) * 100
    ========================= */
+/* junta as frases citadas numa lista.
+   comQue = true  -> "a, que b e que c"   (depois de "Você acreditou")
+   comQue = false -> "a e b"              (depois de "como")      */
+function encadear(itens, comQue){
+  const f = itens.map(i => i.frase);
+  if (f.length === 0) return "";
+  if (f.length === 1) return f[0];
+  const lig = comQue ? ", que " : ", ";
+  const ult = comQue ? " e que " : " e ";
+  return f.slice(0, -1).join(lig) + ult + f[f.length - 1];
+}
+
+/* escolhe itens espalhados pela lista, para nao citar so os primeiros */
+function destaques(itens, quantos){
+  if (itens.length <= quantos) return itens.slice();
+  const passo = itens.length / quantos;
+  const out = [];
+  for (let i = 0; i < quantos; i++) out.push(itens[Math.floor(i * passo)]);
+  return out;
+}
+
+/* monta a explicacao citando as propostas que a pessoa escolheu */
+function explicar(escolhidasL, escolhidasF, lula, flavio, rLula, rFlavio){
+  const caixa = $("porque");
+  let titulo, texto, outro;
+
+  if (rLula === rFlavio){
+    caixa.className = "porque";
+    titulo = "Por que deu empate";
+    texto = "Você acreditou que " + encadear(destaques(escolhidasL, 2), true) +
+            " — mas também que " + encadear(destaques(escolhidasF, 2), true) +
+            ". Com " + lula + " respostas de cada lado, o quiz não desempatou.";
+    outro = "Empate não quer dizer indecisão: quer dizer que os dois conjuntos de propostas pesaram igual para você.";
+  } else if (rLula > rFlavio){
+    caixa.className = "porque l";
+    titulo = "Por que o seu resultado puxou para o Lula";
+    texto = "Você acreditou que " + encadear(destaques(escolhidasL, 4), true) + ".";
+    outro = "Foi esse conjunto de ideias que fez " + lula + " das suas " + TOTAL +
+            " respostas caírem do lado do Lula — os " + rLula + "%. Do outro lado sobraram " + flavio +
+            " respostas, como " + encadear(destaques(escolhidasF, 2), false) + ".";
+  } else {
+    caixa.className = "porque f";
+    titulo = "Por que o seu resultado puxou para o Flávio";
+    texto = "Você acreditou que " + encadear(destaques(escolhidasF, 4), true) + ".";
+    outro = "Foi esse conjunto de ideias que fez " + flavio + " das suas " + TOTAL +
+            " respostas caírem do lado do Flávio — os " + rFlavio + "%. Do outro lado sobraram " + lula +
+            " respostas, como " + encadear(destaques(escolhidasL, 2), false) + ".";
+  }
+
+  $("porque-titulo").textContent = titulo;
+  $("porque-texto").textContent = texto;
+  $("porque-outro").textContent = outro;
+}
+
 function calcular(){
   let lula = 0, flavio = 0;
-  respostas.forEach(r => { if (r === "L") lula++; else if (r === "F") flavio++; });
+  const escolhidasL = [], escolhidasF = [];
+
+  PERGUNTAS.forEach((q, i) => {
+    const r = respostas[i];
+    const curto = RESUMOS[q.tema] || { L: q.A, F: q.B };
+    if (r === "L"){ lula++;   escolhidasL.push({ tema: q.tema, frase: curto.L }); }
+    if (r === "F"){ flavio++; escolhidasF.push({ tema: q.tema, frase: curto.F }); }
+  });
 
   const rLula = Math.round((lula / TOTAL) * 100);
   const rFlavio = Math.round((flavio / TOTAL) * 100);
@@ -662,6 +850,8 @@ function calcular(){
     $("titulo").textContent = "Você é " + rFlavio + "% Flávio";
     $("frase").textContent = "Você escolheu " + flavio + " propostas da linha do Flávio e " + lula + " da linha do Lula.";
   }
+
+  explicar(escolhidasL, escolhidasF, lula, flavio, rLula, rFlavio);
 
   $("conta").innerHTML =
     "Você escolheu <b>" + lula + " propostas da linha Lula</b> e <b>" + flavio + " da linha Flávio</b>, em " + TOTAL + " perguntas.<br>" +
