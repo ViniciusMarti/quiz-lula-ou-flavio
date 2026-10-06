@@ -1,0 +1,7 @@
+# arquivos originais usados só para gerar os avatares (não fazem parte do site)
+img/originais/
+
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store

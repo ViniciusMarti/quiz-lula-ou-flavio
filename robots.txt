@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/originais/
+
+Sitemap: https://viniciusmarti.github.io/quiz-lula-ou-flavio/sitemap.xml

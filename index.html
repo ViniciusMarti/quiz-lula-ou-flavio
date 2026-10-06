@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO ===== -->
+<title>Quiz: você é mais Lula ou Flávio Bolsonaro? 25 perguntas</title>
+<meta name="description" content="Responda 25 perguntas sobre plano de governo, economia, segurança e costumes e descubra na hora com quem você se parece mais: Lula ou Flávio Bolsonaro.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Vinicius Oliveira">
+<meta name="keywords" content="quiz lula ou flavio, quiz político, flavio bolsonaro, lula, plano de governo, eleições 2026, com quem você se parece">
+<link rel="canonical" href="https://viniciusmarti.github.io/quiz-lula-ou-flavio/">
+<meta name="theme-color" content="#f1f0ed">
+
+<!-- ===== compartilhamento ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quiz Lula ou Flávio">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://viniciusmarti.github.io/quiz-lula-ou-flavio/">
+<meta property="og:title" content="Quiz: você é mais Lula ou Flávio Bolsonaro?">
+<meta property="og:description" content="25 perguntas sobre plano de governo. Responda e veja na hora a sua porcentagem de cada lado.">
+<meta property="og:image" content="https://viniciusmarti.github.io/quiz-lula-ou-flavio/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fotos de Flávio Bolsonaro e Lula com a pergunta: com quem você se parece mais?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz: você é mais Lula ou Flávio Bolsonaro?">
+<meta name="twitter:description" content="25 perguntas sobre plano de governo. Responda e veja na hora a sua porcentagem de cada lado.">
+<meta name="twitter:image" content="https://viniciusmarti.github.io/quiz-lula-ou-flavio/img/og-image.jpg">
+
+<!-- ===== icones ===== -->
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- ===== dados estruturados ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://viniciusmarti.github.io/quiz-lula-ou-flavio/#site",
+      "url": "https://viniciusmarti.github.io/quiz-lula-ou-flavio/",
+      "name": "Quiz Lula ou Flávio",
+      "inLanguage": "pt-BR",
+      "description": "Quiz de opinião com 25 perguntas sobre os planos de governo de Lula e de Flávio Bolsonaro."
+    },
+    {
+      "@type": "Quiz",
+      "@id": "https://viniciusmarti.github.io/quiz-lula-ou-flavio/#quiz",
+      "name": "Com quem você se parece mais: Lula ou Flávio Bolsonaro?",
+      "url": "https://viniciusmarti.github.io/quiz-lula-ou-flavio/",
+      "inLanguage": "pt-BR",
+      "description": "Quiz de 25 perguntas, cada uma com duas propostas retiradas dos planos de governo registrados pelas candidaturas. A opção A soma para a linha Lula e a opção B para a linha Flávio Bolsonaro.",
+      "isPartOf": { "@id": "https://viniciusmarti.github.io/quiz-lula-ou-flavio/#site" },
+      "author": { "@type": "Person", "name": "Vinicius Oliveira" },
+      "about": [
+        {
+          "@type": "Person",
+          "name": "Luiz Inácio Lula da Silva",
+          "alternateName": "Lula",
+          "sameAs": "https://pt.wikipedia.org/wiki/Luiz_In%C3%A1cio_Lula_da_Silva"
+        },
+        {
+          "@type": "Person",
+          "name": "Flávio Bolsonaro",
+          "sameAs": "https://pt.wikipedia.org/wiki/Fl%C3%A1vio_Bolsonaro"
+        },
+        { "@type": "Thing", "name": "Plano de governo" },
+        { "@type": "Thing", "name": "Eleições no Brasil em 2026" }
+      ],
+      "educationalUse": "entretenimento",
+      "isAccessibleForFree": true,
+      "learningResourceType": "quiz"
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --lula:#b81c2c;
+    --flavio:#1c3f8f;
+    --bg:#f1f0ed;
+    --card:#fff;
+    --line:#d9d7d1;
+    --text:#1a1a1a;
+    --muted:#6d6a64;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px;
+    line-height:1.5;
+    min-height:100vh;
+    padding:24px 16px 48px;
+  }
+  .wrap{max-width:620px;margin:0 auto}
+
+  .screen{display:none}
+  .screen.on{display:block}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px 24px;
+  }
+  h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
+
+  /* ---------- capa ---------- */
+  .faces{display:flex;align-items:flex-start;justify-content:center;gap:14px;margin-bottom:26px}
+  .face{text-align:center;width:120px}
+  .face img{
+    width:104px;height:104px;border-radius:50%;object-fit:cover;
+    display:block;margin:0 auto 8px;border:1px solid var(--line);
+  }
+  .face b{font-size:15px;font-weight:600;display:block}
+  .face span{font-size:13px;color:var(--muted)}
+  .vs{
+    align-self:center;font-family:Georgia,serif;font-size:22px;color:var(--muted);
+    padding-top:8px;
+  }
+
+  h1{font-size:30px;line-height:1.2;margin:0 0 14px}
+  .lead{color:#3d3b37;margin:0 0 24px}
+
+  /* ---------- botoes ---------- */
+  .btn{
+    display:block;width:100%;border:0;cursor:pointer;
+    background:#1a1a1a;color:#fff;
+    font-family:inherit;font-size:17px;font-weight:600;
+    padding:16px 20px;border-radius:6px;
+    transition:background .15s;
+  }
+  .btn:hover{background:#333}
+
+  /* ---------- quiz ---------- */
+  .qtop{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--muted);margin-bottom:10px}
+  .track{height:5px;background:#e6e4df;border-radius:3px;overflow:hidden;margin-bottom:26px}
+  .fill{height:100%;width:0;background:#1a1a1a;transition:width .3s ease}
+
+  .tema{font-size:14px;color:var(--muted);margin-bottom:6px}
+  h2.qt{font-size:23px;line-height:1.3;margin:0 0 22px}
+
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{
+    display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;
+    background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:16px 16px;cursor:pointer;
+    font-family:inherit;font-size:16.5px;line-height:1.45;color:var(--text);
+    transition:border-color .15s,background .15s;
+  }
+  .opt:hover{border-color:#a9a6a0;background:#fbfbfa}
+  .opt .k{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;
+    border:1px solid var(--line);background:#f4f3f0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;color:#55524d;
+  }
+  .opt.sel{border-color:#1a1a1a;background:#f7f6f3}
+  .opt.sel .k{background:#1a1a1a;border-color:#1a1a1a;color:#fff}
+
+  .back{margin-top:16px;text-align:center}
+  .back button{background:none;border:0;color:var(--muted);font-size:14px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:6px}
+
+  /* ---------- resultado ---------- */
+  .res-head{text-align:center;margin-bottom:28px}
+  .res-head .kicker{font-size:14px;color:var(--muted);margin-bottom:8px}
+  .res-head h2{font-size:26px;margin:0 0 10px}
+  .res-head p{color:var(--muted);font-size:15px;margin:0}
+
+  .score{display:flex;flex-direction:column;gap:20px}
+  .line{display:flex;gap:14px;align-items:center}
+  .line img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:1px solid var(--line)}
+  .line .info{flex:1;min-width:0}
+  .line .name{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:16px;margin-bottom:6px}
+  .line .name .pct{font-variant-numeric:tabular-nums;font-size:18px}
+  .line .bar{height:10px;background:#e6e4df;border-radius:5px;overflow:hidden}
+  .line .bar i{display:block;height:100%;width:0;border-radius:5px;transition:width .8s ease}
+  .line.l .bar i{background:var(--lula)}
+  .line.f .bar i{background:var(--flavio)}
+  .line.l .pct{color:var(--lula)}
+  .line.f .pct{color:var(--flavio)}
+
+  .conta{
+    margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:14px;color:var(--muted);
+  }
+  .conta b{color:#3d3b37;font-weight:600}
+
+  /* ---------- rodape ---------- */
+  .rodape{font-size:12px;color:#8b8880;line-height:1.6;margin-top:16px;text-align:center}
+  .rodape a{color:#8b8880}
+
+  /* ---------- aviso ---------- */
+  .aviso{
+    margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:20px 22px;font-size:13.5px;line-height:1.62;color:#4a4844;
+  }
+  .aviso h3{font-family:Georgia,"Times New Roman",serif;font-size:15px;margin:0 0 10px;color:#1a1a1a}
+  .aviso p{margin:0 0 10px}
+  .aviso p:last-child{margin-bottom:0}
+  .aviso ul{margin:0 0 10px;padding-left:20px}
+  .aviso li{margin-bottom:5px}
+  .aviso a{color:#1a1a1a}
+  .aviso .destaque{font-weight:600;color:#1a1a1a}
+
+  /* ---------- sobre ---------- */
+  .sobre{
+    margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:24px 22px;font-size:14.5px;line-height:1.68;color:#3d3b37;
+  }
+  .sobre h2{font-size:18px;margin:0 0 12px}
+  .sobre h2 + p{margin-top:0}
+  .sobre h2:not(:first-child){margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+  .sobre h3{font-family:inherit;font-size:14.5px;margin:0 0 4px;color:#1a1a1a}
+  .sobre p{margin:0 0 12px}
+  .sobre p:last-child{margin-bottom:0}
+  .sobre .faq{margin-bottom:14px}
+  .sobre .faq:last-child{margin-bottom:0}
+  .noscript{margin-top:16px;padding:16px 18px;background:#fff4e5;border:1px solid #e8cfa8;border-radius:6px;font-size:14px;color:#5a4a2e}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ CAPA ============ -->
+  <section id="tela-inicio" class="screen on">
+    <div class="card">
+      <div class="faces">
+        <div class="face">
+          <img src="img/flavio-avatar.jpg" alt="Foto de Flávio Bolsonaro">
+          <b>Flávio</b>
+        </div>
+        <div class="vs">ou</div>
+        <div class="face">
+          <img src="img/lula-avatar.jpg" alt="Foto de Lula">
+          <b>Lula</b>
+        </div>
+      </div>
+
+      <h1>Com quem você se parece mais?</h1>
+      <p class="lead">São <span id="qtd-perguntas">25</span> perguntas sobre assuntos do dia a dia do país. Em cada uma você escolhe a opção com que concorda mais. A ordem das opções é sorteada pergunta a pergunta, então leia o texto — não se guie pela letra A ou B.</p>
+
+      <button class="btn" id="btn-comecar">Começar</button>
+    </div>
+
+    <div class="aviso">
+      <h3>Aviso</h3>
+      <p class="destaque">Este site é um projeto independente, feito por mim, sem nenhuma relação com Lula, com Flávio Bolsonaro, com seus partidos, campanhas ou assessorias. Não sou filiado, contratado nem financiado por nenhum dos dois lados.</p>
+      <p>As duas opções de cada pergunta foram montadas a partir dos planos de governo registrados pelas candidaturas:</p>
+      <ul>
+        <li>Lula — <a href="https://static.congressoemfoco.com.br/2026/08/14/attachment/2026/08/14/d080ef_0806job838ptlivroplanodegovernocompressed__1_.pdf" target="_blank" rel="noopener">plano de governo (PDF)</a></li>
+        <li>Flávio Bolsonaro — <a href="https://static.poder360.com.br/uploads/2026/08/FLAVIO-BOLSONARO-PARA-O-BRASIL-VENCER-O-ATRASO-1-1.pdf" target="_blank" rel="noopener">plano de governo (PDF)</a></li>
+      </ul>
+      <p>O resultado é informal e serve só para conversa. Não é pesquisa de opinião, não tem valor científico e não substitui a leitura dos planos originais.</p>
+    </div>
+
+    <p class="rodape">Nada do que você responde é enviado para servidor nenhum — tudo roda no seu navegador.</p>
+
+    <noscript>
+      <div class="noscript">
+        Este quiz precisa de JavaScript para funcionar. Ative o JavaScript no seu navegador e recarregue a página.
+      </div>
+    </noscript>
+
+    <section class="sobre">
+      <h2>Sobre este quiz político</h2>
+      <p>Este é um quiz de opinião sobre política brasileira com 25 perguntas. Em cada pergunta aparecem duas propostas: uma retirada do plano de governo de <strong>Lula</strong> e outra retirada do plano de governo de <strong>Flávio Bolsonaro</strong>. Você escolhe a que mais combina com você e, no fim, vê a sua porcentagem de cada lado.</p>
+      <p>Os temas cobertos são impostos e preço da comida, escola e jovens, saúde pública, segurança, meio ambiente e Amazônia, programas sociais, Imposto de Renda, emprego e direitos do trabalhador, casa própria, internet, creches, agricultura familiar e agronegócio, ensino superior, tamanho do governo, aposentadoria e INSS, armas de fogo, serviços públicos, obras e transportes, direitos das mulheres, carreira do servidor público, Supremo Tribunal Federal, privatização de estatais, demarcação de terras indígenas e quilombolas, regulação das redes sociais e pautas de costumes.</p>
+      <p>A ordem das alternativas é sorteada pergunta a pergunta, então a letra A não vale ponto para ninguém: o que conta é o texto que você escolhe. As cinco perguntas mais polêmicas entram em posições sorteadas no meio do quiz.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <h3>Como o resultado é calculado?</h3>
+        <p>Cada escolha da linha Lula soma 1 ponto para Lula e cada escolha da linha Flávio soma 1 ponto para Flávio Bolsonaro. A porcentagem é o total de pontos dividido por 25: <em>(pontos ÷ 25) × 100</em>.</p>
+      </div>
+      <div class="faq">
+        <h3>O resultado é uma pesquisa de opinião?</h3>
+        <p>Não. É um quiz de entretenimento, sem valor científico e sem nenhuma relação com institutos de pesquisa ou com as campanhas.</p>
+      </div>
+      <div class="faq">
+        <h3>Minhas respostas são salvas?</h3>
+        <p>Não. Tudo roda no seu navegador, nada é enviado para nenhum servidor e não existe cadastro.</p>
+      </div>
+      <div class="faq">
+        <h3>De onde vêm as propostas?</h3>
+        <p>Dos planos de governo registrados pelas duas candidaturas. Os links para os PDFs originais estão no aviso acima.</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ PERGUNTAS ============ -->
+  <section id="tela-quiz" class="screen">
+    <div class="card">
+      <div class="qtop">
+        <span id="contador">Pergunta 1 de 25</span>
+        <span id="tema-topo"></span>
+      </div>
+      <div class="track"><div class="fill" id="progresso"></div></div>
+
+      <div class="tema" id="tema">…</div>
+      <h2 class="qt" id="pergunta">…</h2>
+
+      <div class="opts">
+        <button class="opt" data-pos="0">
+          <span class="k">A</span>
+          <span id="txt0">…</span>
+        </button>
+        <button class="opt" data-pos="1">
+          <span class="k">B</span>
+          <span id="txt1">…</span>
+        </button>
+      </div>
+
+      <div class="back">
+        <button id="btn-voltar">Voltar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTADO ============ -->
+  <section id="tela-resultado" class="screen">
+    <div class="card">
+      <div class="res-head">
+        <div class="kicker">Seu resultado</div>
+        <h2 id="titulo">…</h2>
+        <p id="frase">…</p>
+      </div>
+
+      <div class="score">
+        <div class="line l">
+          <img src="img/lula-avatar.jpg" alt="Foto de Lula">
+          <div class="info">
+            <div class="name"><span>Lula</span><span class="pct" id="pctLula">0%</span></div>
+            <div class="bar"><i id="barLula"></i></div>
+          </div>
+        </div>
+        <div class="line f">
+          <img src="img/flavio-avatar.jpg" alt="Foto de Flávio Bolsonaro">
+          <div class="info">
+            <div class="name"><span>Flávio</span><span class="pct" id="pctFlavio">0%</span></div>
+            <div class="bar"><i id="barFlavio"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conta" id="conta">…</div>
+
+      <p style="margin:22px 0 0">
+        <button class="btn" id="btn-refazer">Refazer o quiz</button>
+      </p>
+    </div>
+    <p class="rodape">
+      Projeto independente, sem vínculo com nenhuma candidatura, partido ou campanha.
+      Propostas baseadas nos planos de governo de
+      <a href="https://static.congressoemfoco.com.br/2026/08/14/attachment/2026/08/14/d080ef_0806job838ptlivroplanodegovernocompressed__1_.pdf" target="_blank" rel="noopener">Lula</a> e de
+      <a href="https://static.poder360.com.br/uploads/2026/08/FLAVIO-BOLSONARO-PARA-O-BRASIL-VENCER-O-ATRASO-1-1.pdf" target="_blank" rel="noopener">Flávio Bolsonaro</a>.
+      Resultado informal, sem valor de pesquisa.<br>
+      Fotos: <a href="https://commons.wikimedia.org/wiki/File:Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_(v._AgSen)_(3x4).jpg">Agência Senado</a>
+      e <a href="https://commons.wikimedia.org/wiki/File:Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_(ombros)_denoise.jpg">Ricardo Stuckert/Palácio do Planalto</a>, via Wikimedia Commons.
+    </p>
+  </section>
+
+</div>
+
+<script>
+/* =========================================================
+   PERGUNTAS
+   A = texto da linha Lula    B = texto da linha Flávio
+   (quem fica em cima ou embaixo é sorteado a cada pergunta)
+   ========================================================= */
+
+/* as 20 principais, sempre nesta ordem */
+const PERGUNTAS_FIXAS = [
+  {
+    tema: "Comida e impostos",
+    pergunta: "O que o governo deveria fazer para a comida ficar mais barata?",
+    A: "Zerar o imposto da cesta básica e devolver parte do imposto pago para as famílias mais pobres.",
+    B: "Cortar os impostos de todos os produtos que as famílias compram no mercado, deixando a comida mais barata para todo mundo."
+  },
+  {
+    tema: "Escola e jovens",
+    pergunta: "Qual é o melhor jeito de manter o jovem estudando?",
+    A: "Pagar uma poupança mensal (Pé-de-Meia) para o jovem continuar no ensino médio e não abandonar os estudos.",
+    B: "Criar escolas cívico-militares, com mais disciplina, e dar um voucher para a família pagar escola particular quando faltar vaga na pública."
+  },
+  {
+    tema: "Saúde",
+    pergunta: "Como melhorar o atendimento de saúde pública?",
+    A: "Contratar mais médicos especialistas e garantir vacinação gratuita e obrigatória em todo o país.",
+    B: "Usar aplicativos de celular e inteligência artificial para agendar consultas mais rápido e levar postos móveis até os bairros."
+  },
+  {
+    tema: "Segurança",
+    pergunta: "Qual é o caminho para enfrentar a criminalidade?",
+    A: "Combater o crime com inteligência, seguir o dinheiro das facções e colocar câmeras no uniforme dos policiais.",
+    B: "Construir presídios de segurança máxima, endurecer as penas (como a castração química para estupradores) e acabar com os benefícios de presos."
+  },
+  {
+    tema: "Meio ambiente",
+    pergunta: "O que fazer com a Amazônia e o desmatamento?",
+    A: "Proibir totalmente o desmatamento e combater com firmeza o garimpo ilegal na Amazônia.",
+    B: "Pagar um valor em dinheiro para o agricultor que preservar a mata e facilitar a vida de quem produz no campo, com menos fiscalização."
+  },
+  {
+    tema: "Programas sociais",
+    pergunta: "Qual deve ser o papel do auxílio do governo?",
+    A: "Manter o Bolsa Família como direito fixo, para garantir comida no prato e cuidar das crianças e das mães.",
+    B: "Usar o auxílio só como ponto de partida, para a pessoa fazer cursos, arrumar emprego e deixar de depender do Estado."
+  },
+  {
+    tema: "Imposto de Renda",
+    pergunta: "Como mexer no Imposto de Renda e nos gastos do governo?",
+    A: "Quem ganha até R$ 5.000 não paga nada de Imposto de Renda, e os muito ricos pagam mais.",
+    B: "Diminuir os gastos públicos e cortar impostos gerais, para a economia crescer e gerar empregos."
+  },
+  {
+    tema: "Emprego",
+    pergunta: "Como devem ser as regras de trabalho no Brasil?",
+    A: "Aumentar o salário mínimo acima da inflação todo ano e acabar com a escala 6x1, sem reduzir o salário.",
+    B: "Dar liberdade para o trabalhador negociar direto com o patrão e facilitar o trabalho por aplicativo ou conta própria, com menos regras."
+  },
+  {
+    tema: "Casa própria",
+    pergunta: "Qual é a melhor política de moradia?",
+    A: "Construir casas populares pelo Minha Casa Minha Vida e arrumar a infraestrutura das periferias.",
+    B: "Facilitar o financiamento com juros baixos pelo Casa Verde e Amarela e entregar o documento de propriedade da terra e da casa."
+  },
+  {
+    tema: "Internet",
+    pergunta: "O que o governo deve fazer na internet?",
+    A: "Criar regras para combater mentiras (fake news) e proteger os direitos das pessoas na internet.",
+    B: "Garantir liberdade total de expressão na internet, sem interferência nem órgãos de controle."
+  },
+  {
+    tema: "Creches",
+    pergunta: "Como resolver a falta de vaga em creche?",
+    A: "Construir creches públicas em tempo integral em todos os municípios.",
+    B: "Dar um voucher-creche para a mãe pagar uma creche particular enquanto não houver vaga na rede pública."
+  },
+  {
+    tema: "Agricultura",
+    pergunta: "Para onde deve ir o investimento no campo?",
+    A: "Investir forte na agricultura familiar, para produzir comida barata para a merenda escolar e as feiras.",
+    B: "Apoiar fortemente o agronegócio com máquinas, irrigação e adubos, para o país produzir e exportar mais."
+  },
+  {
+    tema: "Faculdade",
+    pergunta: "Como ampliar o acesso à faculdade?",
+    A: "Construir mais universidades públicas e institutos federais pelo país.",
+    B: "Facilitar o crédito estudantil, que o aluno só começa a pagar quando conseguir um emprego."
+  },
+  {
+    tema: "Tamanho do governo",
+    pergunta: "O governo deve ser maior ou menor?",
+    A: "Ter ministérios específicos para cuidar de áreas como cultura, mulheres, igualdade racial e meio ambiente.",
+    B: "Enxugar a máquina, cortar pelo menos 10 ministérios e economizar dinheiro público."
+  },
+  {
+    tema: "Aposentadoria",
+    pergunta: "Como melhorar a previdência e o INSS?",
+    A: "Garantir aposentadoria justa e diversificar as formas de financiamento da previdência pública.",
+    B: "Automatizar o INSS com tecnologia no celular, para acabar com as filas, sem precisar de sindicatos no meio."
+  },
+  {
+    tema: "Armas",
+    pergunta: "Qual deve ser a regra sobre armas de fogo?",
+    A: "Controlar com rigor a venda de armas e munições, para diminuir a violência.",
+    B: "Garantir ao cidadão de bem o direito de comprar arma de fogo para proteger sua família e sua propriedade."
+  },
+  {
+    tema: "Serviços públicos",
+    pergunta: "Como melhorar saúde e educação?",
+    A: "Investir diretamente no SUS e na escola pública, com recursos do orçamento do Estado.",
+    B: "Fazer parcerias com hospitais e escolas privadas, para atender o cidadão com mais rapidez."
+  },
+  {
+    tema: "Obras e transportes",
+    pergunta: "Quem deve cuidar de estradas, portos e energia?",
+    A: "O governo federal deve liderar grandes obras públicas de transporte e energia, pelo PAC.",
+    B: "O governo deve passar estradas e portos para empresas privadas administrarem, por meio de concessões."
+  },
+  {
+    tema: "Direitos das mulheres",
+    pergunta: "Qual é a melhor política para as mulheres?",
+    A: "Aprovar leis de igualdade salarial obrigatória entre homens e mulheres na mesma função.",
+    B: "Oferecer cursos de capacitação, apoio ao empreendedorismo feminino e segurança reforçada contra a violência doméstica."
+  },
+  {
+    tema: "Servidor público",
+    pergunta: "O que fazer com o funcionalismo público?",
+    A: "Fazer mais concursos públicos e valorizar os salários das carreiras do Estado.",
+    B: "Fazer uma reforma administrativa para cortar cargos comissionados, penduricalhos e supersalários."
+  }
+];
+
+/* as 5 mais espinhosas — entram sorteadas no meio do quiz */
+const PERGUNTAS_POLEMICAS = [
+  {
+    tema: "STF e Judiciário",
+    pergunta: "Qual deve ser a relação do governo com o Supremo Tribunal Federal?",
+    A: "Respeitar a autonomia do STF, para que a Justiça julgue livremente e proteja a democracia e a Constituição.",
+    B: "Aprovar uma reforma para limitar as decisões individuais dos ministros do STF e tirar do Supremo o julgamento de parlamentares."
+  },
+  {
+    tema: "Empresas do governo",
+    pergunta: "O que fazer com as empresas estatais?",
+    A: "Manter empresas públicas fortes, como a Petrobras e os Correios, para controlar preços de combustíveis e investir no país.",
+    B: "Privatizar e vender empresas estatais desnecessárias, para enxugar a máquina pública e atrair investimento privado."
+  },
+  {
+    tema: "Terras indígenas e quilombolas",
+    pergunta: "Como tratar a demarcação de terras indígenas e quilombolas?",
+    A: "Acelerar a demarcação de terras indígenas e a titulação de quilombolas, para reparar injustiças e proteger as florestas.",
+    B: "Priorizar a segurança jurídica dos proprietários rurais e dar liberdade para indígenas e quilombolas produzirem negócios na terra."
+  },
+  {
+    tema: "Redes sociais",
+    pergunta: "Quanto o governo pode mandar nas redes sociais?",
+    A: "Criar regras para as redes sociais, proibindo mentiras (fake news), mensagens de ódio e ataques à democracia.",
+    B: "Proibir órgãos públicos de fiscalizar a internet, garantindo liberdade total para as pessoas opinarem sem risco de censura."
+  },
+  {
+    tema: "Cultura, escola e esporte",
+    pergunta: "Qual deve ser o papel do governo em temas de costumes?",
+    A: "Promover a diversidade e criar políticas específicas para proteger a população LGBTQIAP+ contra qualquer preconceito.",
+    B: "Impedir a doutrinação nas escolas e garantir por lei que o esporte feminino seja disputado apenas por atletas do sexo biológico feminino."
+  }
+];
+
+/* monta a lista final: as 5 polêmicas caem em posições sorteadas
+   na faixa do meio, sem abrir nem fechar o quiz */
+function montarPerguntas(){
+  const n = PERGUNTAS_FIXAS.length + PERGUNTAS_POLEMICAS.length;
+  const MIN = 4;            // pelo menos 4 perguntas antes da primeira polêmica
+  const MAX = n - 5;        // e pelo menos 4 depois da última
+
+  const vagas = [];
+  for (let i = MIN; i <= MAX; i++) vagas.push(i);
+  for (let i = vagas.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [vagas[i], vagas[j]] = [vagas[j], vagas[i]];
+  }
+  const escolhidas = vagas.slice(0, PERGUNTAS_POLEMICAS.length).sort((a, b) => a - b);
+
+  const polemicas = PERGUNTAS_POLEMICAS.slice();
+  for (let i = polemicas.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [polemicas[i], polemicas[j]] = [polemicas[j], polemicas[i]];
+  }
+
+  const lista = new Array(n);
+  escolhidas.forEach((pos, k) => { lista[pos] = polemicas[k]; });
+
+  let f = 0;
+  for (let i = 0; i < n; i++){
+    if (!lista[i]) lista[i] = PERGUNTAS_FIXAS[f++];
+  }
+  return lista;
+}
+
+let PERGUNTAS = montarPerguntas();
+
+/* =========================
+   ESTADO
+   respostas[i] = "L" (linha Lula) ou "F" (linha Flávio)
+   ordens[i]    = em que posição cada linha aparece na pergunta i
+   ========================= */
+const TOTAL = PERGUNTAS.length;
+let atual = 0;
+let respostas = new Array(TOTAL).fill(null);
+let ordens = [];
+
+const $ = id => document.getElementById(id);
+const telas = { inicio: $("tela-inicio"), quiz: $("tela-quiz"), resultado: $("tela-resultado") };
+
+function abrir(nome){
+  Object.values(telas).forEach(t => t.classList.remove("on"));
+  telas[nome].classList.add("on");
+  window.scrollTo(0, 0);
+}
+
+/* sorteia a ordem das alternativas em cada pergunta */
+function sortearOrdens(){
+  ordens = [];
+  for (let i = 0; i < TOTAL; i++){
+    let par = Math.random() < 0.5 ? ["L", "F"] : ["F", "L"];
+    // evita a mesma linha na posição de cima por 3 perguntas seguidas
+    if (i >= 2 && ordens[i - 1][0] === par[0] && ordens[i - 2][0] === par[0]){
+      par = par.slice().reverse();
+    }
+    ordens.push(par);
+  }
+}
+
+function textoDe(q, linha){
+  return linha === "L" ? q.A : q.B;
+}
+
+function desenhar(){
+  const q = PERGUNTAS[atual];
+  const ordem = ordens[atual];
+
+  $("contador").textContent = "Pergunta " + (atual + 1) + " de " + TOTAL;
+  $("tema-topo").textContent = q.tema;
+  $("tema").textContent = q.tema;
+  $("pergunta").textContent = q.pergunta;
+  $("progresso").style.width = (atual / TOTAL) * 100 + "%";
+
+  document.querySelectorAll(".opt").forEach(b => {
+    const pos = Number(b.dataset.pos);
+    const linha = ordem[pos];
+    b.dataset.linha = linha;
+    $("txt" + pos).textContent = textoDe(q, linha);
+    b.classList.toggle("sel", respostas[atual] === linha);
+  });
+
+  $("btn-voltar").style.visibility = atual === 0 ? "hidden" : "visible";
+}
+
+function responder(pos){
+  if (respostas[atual]) return;
+  const linha = ordens[atual][pos];
+  respostas[atual] = linha;
+  document.querySelector('.opt[data-pos="' + pos + '"]').classList.add("sel");
+
+  setTimeout(() => {
+    if (atual < TOTAL - 1){ atual++; desenhar(); }
+    else { calcular(); }
+  }, 220);
+}
+
+/* =========================
+   CONTAGEM
+   Lula   = quantas vezes a linha "L" foi escolhida
+   Flávio = quantas vezes a linha "F" foi escolhida
+   % = (pontos / 20) * 100
+   ========================= */
+function calcular(){
+  let lula = 0, flavio = 0;
+  respostas.forEach(r => { if (r === "L") lula++; else if (r === "F") flavio++; });
+
+  const rLula = Math.round((lula / TOTAL) * 100);
+  const rFlavio = Math.round((flavio / TOTAL) * 100);
+
+  $("pctLula").textContent = rLula + "%";
+  $("pctFlavio").textContent = rFlavio + "%";
+
+  if (rLula === rFlavio){
+    $("titulo").textContent = "Empate";
+    $("frase").textContent = "Você ficou dividido entre os dois: " + rLula + "% para cada lado.";
+  } else if (rLula > rFlavio){
+    $("titulo").textContent = "Você é " + rLula + "% Lula";
+    $("frase").textContent = "Você escolheu " + lula + " propostas da linha do Lula e " + flavio + " da linha do Flávio.";
+  } else {
+    $("titulo").textContent = "Você é " + rFlavio + "% Flávio";
+    $("frase").textContent = "Você escolheu " + flavio + " propostas da linha do Flávio e " + lula + " da linha do Lula.";
+  }
+
+  $("conta").innerHTML =
+    "Você escolheu <b>" + lula + " propostas da linha Lula</b> e <b>" + flavio + " da linha Flávio</b>, em " + TOTAL + " perguntas.<br>" +
+    "Lula: " + lula + " ÷ " + TOTAL + " = " + rLula + "% &nbsp;·&nbsp; Flávio: " + flavio + " ÷ " + TOTAL + " = " + rFlavio + "%";
+
+  abrir("resultado");
+
+  $("barLula").style.width = "0%";
+  $("barFlavio").style.width = "0%";
+  setTimeout(() => {
+    $("barLula").style.width = rLula + "%";
+    $("barFlavio").style.width = rFlavio + "%";
+  }, 100);
+}
+
+/* =========================
+   EVENTOS
+   ========================= */
+$("btn-comecar").addEventListener("click", () => { sortearOrdens(); desenhar(); abrir("quiz"); });
+$("btn-refazer").addEventListener("click", () => {
+  atual = 0;
+  PERGUNTAS = montarPerguntas();   // sorteia de novo onde caem as polêmicas
+  respostas = new Array(TOTAL).fill(null);
+  ordens = [];
+  $("progresso").style.width = "0%";
+  $("barLula").style.width = "0%";
+  $("barFlavio").style.width = "0%";
+  abrir("inicio");
+});
+$("btn-voltar").addEventListener("click", () => { if (atual > 0){ atual--; desenhar(); } });
+
+document.querySelectorAll(".opt").forEach(b => {
+  b.addEventListener("click", () => responder(Number(b.dataset.pos)));
+});
+
+document.addEventListener("keydown", e => {
+  if (!telas.quiz.classList.contains("on")) return;
+  if (respostas[atual]) return;
+  const k = e.key.toLowerCase();
+  if (k === "a" || k === "1") responder(0);
+  if (k === "b" || k === "2") responder(1);
+  if (e.key === "ArrowLeft" && atual > 0){ atual--; desenhar(); }
+});
+
+/* ajusta o número de perguntas mostrado na capa */
+$("qtd-perguntas").textContent = TOTAL;
+</script>
+</body>
+</html>

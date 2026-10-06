@@ -1,0 +1,17 @@
+{
+  "name": "Quiz: Lula ou Flávio Bolsonaro?",
+  "short_name": "Quiz Lula ou Flávio",
+  "description": "25 perguntas sobre os planos de governo para descobrir com quem você se parece mais.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f0ed",
+  "theme_color": "#f1f0ed",
+  "icons": [
+    { "src": "img/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
